@@ -51,9 +51,17 @@ ol {
   align-items: end;
 }
 
+.result__video-container {
+  max-inline-size: 711px;
+  max-block-size: 456px;
+  margin-block-end: 16px;
+  position: relative;
+}
+
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -69,11 +77,36 @@ ol {
   
 }
 
+.title {
+  margin-block-end: 26px;
+}
+
 .content__list {
   max-block-size: 298px;
   overflow: scroll;
+  position: relative;
 }
 
-.title {
-  margin-block-end: 26px;
+.content__list-item {
+  margin-block-end: 30px;
+}
+
+.content__list-item:nth-last-child(2) {
+  margin-block-end: 0;
+}
+
+.content__video-card {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.content__video-card-thumbnail {
+  max-inline-size: 194px;
+  max-block-size: 103px;
 }
