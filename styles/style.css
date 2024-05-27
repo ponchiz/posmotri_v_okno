@@ -70,6 +70,12 @@ ol {
   justify-content: space-between;
 }
 
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .content__details {
   grid-column: 2/3;
   block-size: 100%;
@@ -78,7 +84,16 @@ ol {
 }
 
 .title {
+  font-family: Oswald, sans-serif;
   margin-block-end: 26px;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
 }
 
 .content__list {
@@ -95,6 +110,11 @@ ol {
   margin-block-end: 0;
 }
 
+.content__card-link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 .content__video-card {
   display: flex;
   align-content: flex-start;
@@ -105,6 +125,20 @@ ol {
   inline-size: 100%;
   block-size: 100%;
 }
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  line-height: 16.2px;
+}
+
 
 .content__video-card-thumbnail {
   max-inline-size: 194px;
