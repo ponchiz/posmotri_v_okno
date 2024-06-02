@@ -214,7 +214,7 @@ ol {
 .content__list {
   max-block-size: 298px;
   inline-size: 399px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 }
 
