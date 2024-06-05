@@ -16,11 +16,11 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  /*display: grid;
+  display: grid;
   justify-content: center;
   align-items: end;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;*/
+  grid-template-rows: 1fr;
 }
 
 h1,
@@ -81,26 +81,21 @@ ol {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-block-end: 5px;
 }
 
 .search-form__label {
   display: inline-flex;
   width: fit-content;
-  margin-block-start: 5px;
+  align-items: center;
+  padding-block-end: 5px;
 }
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;
 }
-/*
-.search-form__label:hover:not(:nth-child(1)){
-  text-decoration: underline;
-}
-для того, чтобы при наведении на блок чекбокса выделялся текст, а не только при наведении на текст
-*/
 
-.search-form__label-text:hover {
+
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -111,7 +106,9 @@ ol {
   border: 1px solid #FFF;
   margin-inline-end: 5px;
   cursor: pointer;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before  {
@@ -119,13 +116,10 @@ ol {
   background-color: #FFF;
   inline-size: 15px;
   block-size: 15px;
-  inset: 1px;
-  position: absolute;
 }
 
 .search-form__textfield {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
   font-family: inherit;
   font-size: 18px;
   line-height: 21.6px;
@@ -137,13 +131,26 @@ ol {
   appearance: none;
 }
 
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 400;
+}
+
 .search-form__textfield:active {
   border: 1px solid #FFF;
 }
 
-.search-form__textfield:focus-visible {
+
+.search-form__textfield:focus,
+.search-form__label:focus,
+.button:focus,
+.content__card-link:focus
+ {
   outline: none;
 }
+/* убрал outline у всех интерактивных элементов*/
 
 .search-form__fieldset {
   border: none;
@@ -188,7 +195,6 @@ ol {
 
 .search-form__submit-button {
   padding: 6px 72.5px;
-  margin-block-end: -5px;
 }
 
 .content__details {
@@ -222,7 +228,7 @@ ol {
   margin-block-end: 30px;
 }
 
-.content__list-item:nth-last-child(2) {
+.content__list-item:last-of-type {
   margin-block-end: 0;
 }
 
@@ -233,15 +239,15 @@ ol {
   margin: 2px;
 }
 
-.content__card-link:focus {
-  outline: none;
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid #FFF;
-}
-
-.content__card-link_current:focus-visible {
   outline: 1px solid #FFF;
 }
 
@@ -250,32 +256,14 @@ ol {
 }
 
 .content__video-card {
-  block-size: 107px;
   inline-size: 398px;
   display: flex;
   align-content: flex-start;
   justify-content: space-between;
 }
 
-.content__video-card:active {
-  background-color: #545050;
-}
-
-.content__video-card:focus-visible:focus {
-  outline: none;
-}
-
-.content__video-card:focus-visible:focus-visible {
-  outline: 1px solid #FFF;
-}
-
 .content__video-card-description-container {
   inline-size: 200px;
-  block-size: 101px;
-}
-
-.content__video-card-description-container:hover {
-  text-decoration: underline;
 }
 
 .content__video-card-title {
@@ -285,6 +273,10 @@ ol {
   line-height: 30px;
   text-transform: uppercase;
   margin-block-end: 6px;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+  max-inline-size: 200px;
 }
 
 .content__video-card-description {
@@ -294,16 +286,14 @@ ol {
 
 
 .content__video-card-thumbnail {
-  inline-size: 194px;
+  inline-size: 198px;
   block-size: 103px;
-  left: -2px;
   position: relative;
 }
 
 .more-button {
   padding: 6px 146.5px;
   white-space: nowrap;
-  margin-block-start: 30px;
   inline-size: 399px;
   block-size: 34px;
 }
